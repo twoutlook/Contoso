@@ -29,7 +29,10 @@ namespace ContosoUniversity
             services.AddDbContext<SchoolContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            //Add the database exception filter
+            //https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro?view=aspnetcore-5.0
             services.AddDatabaseDeveloperPageExceptionFilter();
+
             services.AddControllersWithViews();
 
         }
